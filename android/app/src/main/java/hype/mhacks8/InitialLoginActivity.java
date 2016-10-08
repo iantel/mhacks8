@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.beardedhen.androidbootstrap.TypefaceProvider;
+
 public class InitialLoginActivity extends AppCompatActivity {
 
 
@@ -13,6 +15,8 @@ public class InitialLoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_initial_login);
+
+        TypefaceProvider.registerDefaultIconSets();
 
         Button doctorButton = (Button) findViewById(R.id.doctor_choice);
         doctorButton.setOnClickListener(new View.OnClickListener() {
