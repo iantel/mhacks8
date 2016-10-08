@@ -4,6 +4,7 @@
     android:id="@+id/activity_initial_login"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -11,17 +12,19 @@
     tools:context="hype.mhacks8.InitialLoginActivity">
 
     <ImageView
-        android:layout_width="75dp"
+        android:layout_width="match_parent"
         android:layout_height="100dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
         android:background="@drawable/best_logo_ever"
         android:id="@+id/logo_initial" />
-
 
     <Button
         android:text="DOCTOR"
         android:layout_width="match_parent"
         android:layout_height="125dp"
         android:textSize="40dp"
+        android:background="@color/colorPrimary"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
         android:layout_marginTop="100dp"
@@ -33,10 +36,8 @@
         android:layout_width="match_parent"
         android:layout_height="125dp"
         android:textSize="40dp"
-        android:layout_below="@+id/doctor_choice"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="60dp"
         android:id="@+id/patient_choice" />
