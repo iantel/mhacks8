@@ -1,9 +1,11 @@
 package hype.mhacks8;
 
+import android.app.FragmentManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -82,16 +84,19 @@ public class MainActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
+        android.support.v4.app.FragmentManager manager = this.getSupportFragmentManager();
+        Fragment f = null;
+        if (id == R.id.med_search) {
+            f = new MedicineSearchFragment();
+        } else if (id == R.id.med_schedule) {
+            f = new MedicineScheduleFragment();
+        } else if (id == R.id.med_share) {
 
-        if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.med_send) {
 
         }
+
+        manager.beginTransaction().replace(R.id.main_view, f).commit();
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

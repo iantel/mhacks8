@@ -3,22 +3,22 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/med_search"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
+            android:title="Medicine Search" />
         <item
-            android:id="@+id/nav_manage"
+            android:id="@+id/med_schedule"
             android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
+            android:title="Medicine Scheduling" />
 
         <item android:title="Communicate">
             <menu>
                 <item
-                    android:id="@+id/nav_share"
+                    android:id="@+id/med_share"
                     android:icon="@drawable/ic_menu_share"
                     android:title="Share" />
                 <item
-                    android:id="@+id/nav_send"
+                    android:id="@+id/med_send"
                     android:icon="@drawable/ic_menu_send"
                     android:title="Send" />
             </menu>

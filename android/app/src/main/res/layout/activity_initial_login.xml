@@ -14,7 +14,7 @@
     <ImageView
         android:layout_width="75dp"
         android:layout_height="100dp"
-        android:background="@drawable/best_logo_ever"
+        android:background="@color/colorPrimary"
         android:layout_above="@+id/doctor_choice"
         android:layout_centerHorizontal="true"
         android:id="@+id/logo_initial"

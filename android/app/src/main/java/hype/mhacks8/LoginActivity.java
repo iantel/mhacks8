@@ -32,7 +32,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-import whogivesashit.mhacks8.R;
+import hype.mhacks8.R;
 
 import static android.Manifest.permission.READ_CONTACTS;
 

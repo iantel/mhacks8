@@ -14,7 +14,7 @@
     <ImageView
         android:layout_width="200dp"
         android:layout_height="100dp"
-        android:background="@drawable/best_logo_ever" />
+        android:background="@color/colorPrimary" />
 
     <!-- Login progress -->
     <ProgressBar
