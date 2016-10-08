@@ -1,13 +1,10 @@
 package hype.mhacks8;
 
-import android.app.FragmentManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.Fragment;
-import android.view.View;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -44,6 +41,7 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        onNavigationItemSelected(navigationView.getMenu().getItem(0));
     }
 
     @Override
@@ -86,20 +84,26 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
         android.support.v4.app.FragmentManager manager = this.getSupportFragmentManager();
         Fragment f = null;
-        if (id == R.id.med_search) {
-            f = new MedicineSearchFragment();
-        } else if (id == R.id.med_schedule) {
-            f = new MedicineScheduleFragment();
-        } else if (id == R.id.med_share) {
 
-        } else if (id == R.id.med_send) {
-
+        switch(id){
+            case R.id.med_home:
+                f = new CondensedScheduleFragment();
+                break;
+            case R.id.med_schedule:
+                f = new MedicineScheduleFragment();
+                break;
+            case R.id.med_search:
+                f = new MedicineSearchFragment();
+                break;
+            default: f = null;
         }
-
-        manager.beginTransaction().replace(R.id.main_view, f).commit();
-
+        replaceView(f, manager);
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    private void replaceView(Fragment replacement, FragmentManager manager){
+        manager.beginTransaction().replace(R.id.main_view, replacement).commit();
     }
 }
