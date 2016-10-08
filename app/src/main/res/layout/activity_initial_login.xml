@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_initial_login"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="hype.mhacks8.InitialLoginActivity">
+
+
+    <ImageView
+        android:layout_width="75dp"
+        android:layout_height="100dp"
+        android:background="@drawable/best_logo_ever"
+        android:layout_above="@+id/doctor_choice"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/logo_initial"
+        android:layout_alignParentTop="true" />
+
+
+    <Button
+        android:text="DOCTOR"
+        android:layout_width="match_parent"
+        android:layout_height="125dp"
+        android:textSize="40dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="100dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:id="@+id/doctor_choice" />
+
+    <Button
+        android:text="PATIENT"
+        android:layout_width="match_parent"
+        android:layout_height="125dp"
+        android:textSize="40dp"
+        android:layout_below="@+id/doctor_choice"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="60dp"
+        android:id="@+id/patient_choice" />
+
+</RelativeLayout>
