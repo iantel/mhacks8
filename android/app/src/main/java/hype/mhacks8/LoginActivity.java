@@ -23,6 +23,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.beardedhen.androidbootstrap.BootstrapButton;
+import com.beardedhen.androidbootstrap.TypefaceProvider;
+
 import static android.Manifest.permission.READ_CONTACTS;
 
 /**
@@ -53,10 +56,36 @@ public class LoginActivity extends AppCompatActivity {
     private View mProgressView;
     private View mLoginFormView;
 
+    private BootstrapButton mDoctorButton;
+    private BootstrapButton mPatientButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        TypefaceProvider.registerDefaultIconSets();
+
+
+        mDoctorButton = (BootstrapButton) findViewById(R.id.doctor_choice);
+        mDoctorButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent doctorIntent = new Intent(LoginActivity.this, DoctorMainActivity.class);
+                LoginActivity.this.startActivity(doctorIntent);
+            }
+        });
+
+        mPatientButton = (BootstrapButton) findViewById(R.id.doctor_choice);
+        mPatientButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent patientIntent = new Intent(LoginActivity.this, PatientMainActivity.class);
+                LoginActivity.this.startActivity(patientIntent);
+            }
+        });
+
+
         // Set up the login form.
         mEmailView = (TextInputEditText) findViewById(R.id.email);
 
