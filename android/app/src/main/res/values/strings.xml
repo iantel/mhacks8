@@ -25,4 +25,5 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_base">BaseActivity</string>
     <string name="title_activity_doctor_main">DoctorMainActivity</string>
+    <string name="title_activity_patient_info">PatientInfoActivity</string>
 </resources>

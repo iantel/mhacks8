@@ -27,6 +27,10 @@
         <activity
             android:name=".DoctorMainActivity"
             android:label="@string/title_activity_doctor_main"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".PatientInfoActivity"
+            android:label="@string/title_activity_patient_info"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
