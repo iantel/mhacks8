@@ -21,18 +21,6 @@
         android:id="@+id/logo_initial" />
 
 
-    <com.beardedhen.androidbootstrap.BootstrapButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="BootstrapButton"
-        app:bootstrapBrand="success"
-        app:bootstrapSize="lg"
-        app:buttonMode="regular"
-        app:showOutline="false"
-        app:roundedCorners="true"
-        />
-
-
     <Button
         android:text="DOCTOR"
         android:layout_width="match_parent"
