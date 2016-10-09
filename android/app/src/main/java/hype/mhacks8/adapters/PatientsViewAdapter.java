@@ -1,5 +1,6 @@
 package hype.mhacks8.adapters;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
@@ -47,6 +48,7 @@ public class PatientsViewAdapter extends RecyclerView.Adapter{
                 patientInfoIntent.putExtra("NAME",(((PrescriptionViewHolder) holder).mPatientNameTextView.getText().toString()));
                 patientInfoIntent.putExtra("CONDITION",(((PrescriptionViewHolder) holder).mPatientConditionTextView.getText().toString()));
                 context.startActivity(patientInfoIntent);
+                ((Activity) context).overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
             }
         });
     }
