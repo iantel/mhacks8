@@ -14,9 +14,10 @@ import hype.mhacks8.R;
  * Created by Ian on 2016-10-08.
  */
 public class PrescriptionViewAdapter extends RecyclerView.Adapter {
-
-    public PrescriptionViewAdapter (){
+    public int count;
+    public PrescriptionViewAdapter (int i){
         super();
+        count = i;
     }
 
     @Override
@@ -36,11 +37,11 @@ public class PrescriptionViewAdapter extends RecyclerView.Adapter {
     @Override
     public int getItemCount() {
         //TODO Replace item count with number according to DB call
-        return 10;
+        return count;
     }
 
     //Individual items in the prescription list
-    private static class PrescriptionViewHolder extends RecyclerView.ViewHolder{
+    public static class PrescriptionViewHolder extends RecyclerView.ViewHolder{
         TextView mDrugNameTextView;
         TextView mConditionTextView;
         ImageView mDrugImage;

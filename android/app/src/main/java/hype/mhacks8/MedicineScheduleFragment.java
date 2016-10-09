@@ -25,7 +25,7 @@ public class MedicineScheduleFragment extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_medicine_schedule, container, false);
         RecyclerView prescriptionView = (RecyclerView) v.findViewById(R.id.prescription_view);
-        PrescriptionViewAdapter adapter = new PrescriptionViewAdapter();
+        PrescriptionViewAdapter adapter = new PrescriptionViewAdapter(10);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this.getActivity());
         prescriptionView.setAdapter(adapter);
         prescriptionView.setLayoutManager(layoutManager);
