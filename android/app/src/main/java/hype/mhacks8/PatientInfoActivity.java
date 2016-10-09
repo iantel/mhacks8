@@ -45,7 +45,14 @@ public class PatientInfoActivity extends AppCompatActivity {
         addPrescription.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                View newPill = findViewById(R.id.prescription_adapter_item);
+                TextView drugName = (TextView) newPill.findViewById(R.id.drug_name);
+                TextView conditionName = (TextView) newPill.findViewById(R.id.condition);
 
+                drugName.setText("Drug " + patientPrescriptions.getAdapter().getItemCount());
+                conditionName.setText("Condition " + patientPrescriptions.getAdapter().getItemCount());
+                patientPrescriptions.setAdapter(new PrescriptionViewAdapter(adapter.getItemCount() + 1));
+                adapter.count += 1;
             }
         });
     }

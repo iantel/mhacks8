@@ -8,19 +8,16 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import hype.mhacks8.Drug;
 import hype.mhacks8.R;
 
 /**
  * Created by Ian on 2016-10-08.
  */
 public class PrescriptionViewAdapter extends RecyclerView.Adapter {
-    public List<Drug> medications = new ArrayList<>();
+    public int count;
     public PrescriptionViewAdapter (int i){
         super();
+        count = i;
     }
 
     @Override
@@ -33,16 +30,14 @@ public class PrescriptionViewAdapter extends RecyclerView.Adapter {
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-        if (!medications.isEmpty()) {
-            ((PrescriptionViewHolder) holder).mDrugNameTextView.setText(medications.get(position).getName());
-            ((PrescriptionViewHolder) holder).mConditionTextView.setText(medications.get(position).getDosage());
-        }
+        ((PrescriptionViewHolder) holder).mDrugNameTextView.setText("Drug " + String.valueOf(position));
+        ((PrescriptionViewHolder) holder).mConditionTextView.setText("Condition " + String.valueOf(position) );
     }
 
     @Override
     public int getItemCount() {
         //TODO Replace item count with number according to DB call
-        return medications.size();
+        return count;
     }
 
     //Individual items in the prescription list
