@@ -158,7 +158,7 @@ public class LoginActivity extends AppCompatActivity {
             showProgress(true);
 //            mAuthTask = new UserLoginTask(email, password);
 //            mAuthTask.execute((Void) null);
-            Intent mainIntent = new Intent(LoginActivity.this, PatientMainActivity.class);
+            Intent mainIntent = new Intent(LoginActivity.this, DoctorMainActivity.class);
             LoginActivity.this.startActivity(mainIntent);
         }
     }

@@ -27,14 +27,14 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:textSize="15sp"
-                android:id="@+id/drug_name"/>
+                android:id="@+id/patient_name"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:textSize="15sp"
-                android:id="@+id/condition"/>
+                android:id="@+id/patient_condition"/>
 
         </LinearLayout>
     </LinearLayout>

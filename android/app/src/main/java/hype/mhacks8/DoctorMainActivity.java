@@ -1,10 +1,12 @@
 package hype.mhacks8;
 
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.design.widget.NavigationView;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.view.View;
+import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -13,16 +15,15 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class PatientMainActivity extends AppCompatActivity
+public class DoctorMainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_doctor_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -30,7 +31,7 @@ public class PatientMainActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        NavigationView navigationView = (NavigationView) findViewById(R.id.doc_nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         onNavigationItemSelected(navigationView.getMenu().getItem(0));
     }
@@ -48,8 +49,7 @@ public class PatientMainActivity extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        //We don't want to see the action bar options menu (triple dot on the right)
+        getMenuInflater().inflate(R.menu.doctor_main, menu);
         return false;
     }
 
@@ -65,25 +65,25 @@ public class PatientMainActivity extends AppCompatActivity
             return true;
         }
 
-        return super.onOptionsItemSelected(item);
+        return false;
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+    public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
         android.support.v4.app.FragmentManager manager = this.getSupportFragmentManager();
         Fragment f;
 
         switch(id){
-            case R.id.med_home:
+            case R.id.doc_home:
                 f = new CondensedScheduleFragment();
                 break;
-            case R.id.med_schedule:
-                f = new MedicineScheduleFragment();
+            case R.id.doc_view_patients:
+                f = new DoctorPatientsFragment();
                 break;
-            case R.id.med_search:
+            case R.id.doc_search_drugs:
                 f = new MedicineSearchFragment();
                 break;
             default: f = null;
@@ -95,6 +95,6 @@ public class PatientMainActivity extends AppCompatActivity
     }
 
     private void replaceView(Fragment replacement, FragmentManager manager){
-        manager.beginTransaction().replace(R.id.main_view, replacement).commit();
+        manager.beginTransaction().replace(R.id.doc_main, replacement).commit();
     }
 }

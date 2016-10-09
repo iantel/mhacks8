@@ -13,24 +13,20 @@ import hype.mhacks8.R;
 /**
  * Created by Ian on 2016-10-08.
  */
-public class PrescriptionViewAdapter extends RecyclerView.Adapter {
-
-    public PrescriptionViewAdapter (){
-        super();
-    }
+public class PatientsViewAdapter extends RecyclerView.Adapter{
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Context context = parent.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
-        View tripsView = inflater.inflate(R.layout.prescription_adapter_item, parent, false);
+        View tripsView = inflater.inflate(R.layout.patient_adapter_item, parent, false);
         return new PrescriptionViewHolder(tripsView);
     }
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-        ((PrescriptionViewHolder) holder).mDrugNameTextView.setText("Drug " + String.valueOf(position));
-        ((PrescriptionViewHolder) holder).mConditionTextView.setText("Condition " + String.valueOf(position) );
+        ((PrescriptionViewHolder) holder).mPatientNameTextView.setText("Patient " + String.valueOf(position));
+        ((PrescriptionViewHolder) holder).mPatientConditionTextView.setText("Condition " + String.valueOf(position) );
     }
 
     @Override
@@ -41,14 +37,14 @@ public class PrescriptionViewAdapter extends RecyclerView.Adapter {
 
     //Individual items in the prescription list
     private static class PrescriptionViewHolder extends RecyclerView.ViewHolder{
-        TextView mDrugNameTextView;
-        TextView mConditionTextView;
+        TextView mPatientNameTextView;
+        TextView mPatientConditionTextView;
         ImageView mDrugImage;
 
         public PrescriptionViewHolder(View itemView) {
             super(itemView);
-            mDrugNameTextView = (TextView) itemView.findViewById(R.id.drug_name);
-            mConditionTextView = (TextView) itemView.findViewById(R.id.condition);
+            mPatientNameTextView = (TextView) itemView.findViewById(R.id.patient_name);
+            mPatientConditionTextView = (TextView) itemView.findViewById(R.id.patient_condition);
         }
     }
 }

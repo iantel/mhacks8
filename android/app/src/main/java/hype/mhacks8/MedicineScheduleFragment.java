@@ -15,8 +15,6 @@ import hype.mhacks8.adapters.PrescriptionViewAdapter;
 
 public class MedicineScheduleFragment extends Fragment {
 
-    private RecyclerView prescriptionView;
-
     public MedicineScheduleFragment() {
         // Required empty public constructor
     }
@@ -26,7 +24,7 @@ public class MedicineScheduleFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_medicine_schedule, container, false);
-        prescriptionView = (RecyclerView) v.findViewById(R.id.prescription_view);
+        RecyclerView prescriptionView = (RecyclerView) v.findViewById(R.id.prescription_view);
         PrescriptionViewAdapter adapter = new PrescriptionViewAdapter();
         LinearLayoutManager layoutManager = new LinearLayoutManager(this.getActivity());
         prescriptionView.setAdapter(adapter);
